@@ -1,3 +1,48 @@
 # a very minimal declarative config file
 _format_version: "2.1"
 _transform: true
+services:
+  - name: itemserver
+    url: https://itemserver-production.up.railway.app/
+    routes:
+      - name: itemserver-service-routess
+        paths:
+          - /items
+        strip_path: true
+  - name: user-server
+    url: https://userserver-production.up.railway.app/
+    routes:
+      - name: user-service-routess
+        paths:
+          - /users
+        strip_path: true
+#format_version: "2.1"
+
+#services:
+#  - name: item-server
+#    url: https://itemserver-production.up.railway.app/
+#    routes:
+#      - name: item-route
+#        paths:
+#          - /items
+#        plugins:
+#          - name: my-plugin
+#            config:
+#              hosts:
+#                - itemserver-production.up.railway.app
+#  - name: user-server
+#    url: https://userserver-production.up.railway.app/
+#    routes:
+#      - name: user-route
+#        paths:
+#          - /users
+#        plugins:
+#          - name: my-plugin
+#            config:
+#              hosts:
+#                - userserver-production.up.railway.app
+#
+#plugins:
+#  - name: my-plugin
+#    config:
+#      message: "Hello, World!"
